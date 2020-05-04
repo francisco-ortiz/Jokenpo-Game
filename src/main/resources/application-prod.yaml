@@ -1,0 +1,46 @@
+server:
+  servlet:
+    context-path: /jokenpo/api
+  port: 8080
+  
+spring:
+  ###
+  #   PRODUCTION PROFILE
+  ###
+  profiles: 
+    actie: prod
+      
+  ###
+  # Database Settings
+  ###
+  datasource:
+    # jdbc:h2:file:/home/h2/db
+    url: jdbc:h2:mem:jokenpodb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password    
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate:
+      ddl-auto: update
+    ## Hibernate Properties
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true   
+       
+  ###
+  #   H2 Settings
+  ###
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false        
+        

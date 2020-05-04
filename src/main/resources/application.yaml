@@ -1,0 +1,24 @@
+# Server Aplication
+server:
+  servlet:
+    context-path: /jokenpo/api
+  port: 8080
+  
+# Application Port and Name
+
+spring:
+  application:
+    name: Jokenpo Application
+  
+# Log Level
+# Must be one of ("trace", "debug", "info", "warn", or "error").
+# If not specified, defaults to "info".
+logging:
+  file:
+    path: /tmp/logs
+    name: jokenpo.logs 
+  level:
+    org:
+      springframework:
+        web: INFO
+    root: INFO
